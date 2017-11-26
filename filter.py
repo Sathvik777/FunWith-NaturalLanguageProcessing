@@ -57,6 +57,12 @@ def stemming_a_word(word):
 
 
 
+def named_entity_recognition(taged_words):
+    named_entity_chunk = nltk.ne_chunk()
+    named_entity_chunk.draw()
+
+
+
 
 if __name__ == "__main__":
     filter_sentence_with_stop_words(test_sentence)
