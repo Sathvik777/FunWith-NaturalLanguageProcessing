@@ -8,4 +8,8 @@ Well that did not rhyme as good as "Fun with Flags". Meh!
 
 ### Topics 
 * Stop Words
+* Tokenizing
+* Stemming
+* Chucking 
+
 
