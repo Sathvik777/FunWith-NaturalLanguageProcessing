@@ -27,6 +27,16 @@ def filter_sentence_with_stop_words(sentence):
 
     print(words_after_filter_stop_words)
 
+#Chunking data based on string Type (According to NLTK)
+def chunk_data(taged_words):
+    chuck_grammar = "Chunk: {<RB.?>*<VB.?>*<NNP><NN>?}"
+    chuck_parser = nltk.RegexpParser(chuck_grammar) 
+    chucked_data = cp.parse(taged_words)
+    print(chucked_data) 
+
+
+
+
 def unSupervisedML_tokenizer(test_set, train_set):
     punkTSent_tokenizer = PunktSentenceTokenizer(train_set)
     tokenized_set = punkTSent_tokenizer.tokenize(test_set)
@@ -34,7 +44,7 @@ def unSupervisedML_tokenizer(test_set, train_set):
         for w in tokenized_set:
             words_taged = nltk.word_tokenize(w)
             positive_tages = nltk.pos_tag(words_taged)
-            print(positive_tages)
+            chunk_data(positive_tages)
 
     except Exception as e:
         print(str(e))
