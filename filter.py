@@ -3,7 +3,7 @@ from nltk.tokenize import sent_tokenize, word_tokenize, PunktSentenceTokenizer
 from nltk.corpus import stopwords, state_union
 
 #PorterStemmer is one of pre-trained stemmer NLTK provides 
-from nltk.stem import PorterStemmer
+from nltk.stem import PorterStemmer, WordNetLemmatizer
 
 test_sentence = "This a Test proving NLTK stopping words work, a the an my our and, should not be printed"
 
@@ -54,6 +54,18 @@ def stemming_a_word(word):
     print("actual word "+word)
     ps = PorterStemmer()
     print("stemmed word "+ps.stem(word))
+
+
+def stemming_word_with_WordNet(word):
+    print("actual word "+word)
+    word_net = WordNetLemmatizer()
+    """
+    WordNetLemmatizer
+    arg-1 : word
+    arg-2 : noun, verb, adjective etc.. eg: (pos ="v")
+    """
+
+    print("stemmed word "+word_net.stem(word))
 
 
 

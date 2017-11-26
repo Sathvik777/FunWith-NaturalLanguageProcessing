@@ -13,5 +13,6 @@ Well that did not rhyme as good as "Fun with Flags". Meh!
 * Chucking 
 * Chinking 
 * Named Entity Recognition
+* Lemmatizing
 
 
