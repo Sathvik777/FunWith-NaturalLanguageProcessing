@@ -31,8 +31,8 @@ def filter_sentence_with_stop_words(sentence):
 def chunk_data(taged_words):
     chuck_grammar = "Chunk: {<RB.?>*<VB.?>*<NNP><NN>?}"
     chuck_parser = nltk.RegexpParser(chuck_grammar) 
-    chucked_data = cp.parse(taged_words)
-    print(chucked_data) 
+    chucked_data = chuck_parser.parse(taged_words)
+    chucked_data.draw() 
 
 
 

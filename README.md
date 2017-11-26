@@ -11,5 +11,7 @@ Well that did not rhyme as good as "Fun with Flags". Meh!
 * Tokenizing
 * Stemming
 * Chucking 
+* Chinking 
+* Named Entity Recognition
 
 
