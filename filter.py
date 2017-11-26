@@ -1,5 +1,6 @@
-from nltk.tokenize import sent_tokenize, word_tokenize
-from nltk.corpus import stopwords
+import nltk
+from nltk.tokenize import sent_tokenize, word_tokenize, PunktSentenceTokenizer
+from nltk.corpus import stopwords, state_union
 
 #PorterStemmer is one of pre-trained stemmer NLTK provides 
 from nltk.stem import PorterStemmer
@@ -25,6 +26,19 @@ def filter_sentence_with_stop_words(sentence):
     #words_after_filter_stop_words = [w for w in words_from_example_sentnce if not w in stop_words]
 
     print(words_after_filter_stop_words)
+
+def unSupervisedML_tokenizer(test_set, train_set):
+    punkTSent_tokenizer = PunktSentenceTokenizer(train_set)
+    tokenized_set = punkTSent_tokenizer.tokenize(test_set)
+    try:
+        for w in tokenized_set:
+            words_taged = nltk.word_tokenize(w)
+            positive_tages = nltk.pos_tag(words_taged)
+            print(positive_tages)
+
+    except Exception as e:
+        print(str(e))
+
 
 def stemming_a_word(word):
     print("actual word "+word)
