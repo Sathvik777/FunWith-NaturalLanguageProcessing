@@ -7,5 +7,5 @@ Well that did not rhyme as good as "Fun with Flags". Meh!
 
 
 ### Topics 
-* Stoping Words
+* Stop Words
 
