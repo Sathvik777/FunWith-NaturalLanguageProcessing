@@ -1,11 +1,14 @@
 from nltk.tokenize import sent_tokenize, word_tokenize
 from nltk.corpus import stopwords
 
+#PorterStemmer is one of pre-trained stemmer NLTK provides 
+from nltk.stem import PorterStemmer
+
 test_sentence = "This a Test proving NLTK stopping words work, a the an my our and, should not be printed"
 
+steamm_test_words = ["sathvik", "sathviking", "sathivker"]
 
-
-def filter_sentence_with_stop_words():
+def filter_sentence_with_stop_words(sentence):
     #Setting language to english
     stop_words = set(stopwords.words("english"))
 
@@ -23,6 +26,15 @@ def filter_sentence_with_stop_words():
 
     print(words_after_filter_stop_words)
 
+def stemming_a_word(word):
+    print("actual word "+word)
+    ps = PorterStemmer()
+    print("stemmed word "+ps.stem(word))
+
+
+
 
 if __name__ == "__main__":
-    filter_sentence_with_stop_words()
+    filter_sentence_with_stop_words(test_sentence)
+    for word in steamm_test_words:
+        stemming_a_word(word)
